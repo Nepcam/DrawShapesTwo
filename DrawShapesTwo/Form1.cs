@@ -19,10 +19,12 @@ namespace DrawShapesTwo
 
         private void pictureBoxDisplay_MouseMove(object sender, MouseEventArgs e)
         {
-            Graphics paper = pictureBoxDisplay.CreateGraphics();
-            Pen pen1 = new Pen(Color.Red, 2);
+            Graphics canvas = pictureBoxDisplay.CreateGraphics();
+            Pen redPen = new Pen(Color.Red, 2);
+            Pen bluePen = new Pen(Color.Blue, 2);
 
-            paper.DrawLine(pen1, 600, 300, e.X, e.Y);
+            canvas.DrawLine(redPen, pictureBoxDisplay.Width/2, pictureBoxDisplay.Height/2, e.X, e.Y);
+            //canvas.DrawLine(bluePen, 0, 0, e.X, e.Y);
         }
     }
 }

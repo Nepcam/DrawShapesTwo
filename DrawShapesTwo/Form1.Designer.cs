@@ -34,7 +34,7 @@
             // 
             // pictureBoxDisplay
             // 
-            this.pictureBoxDisplay.BackColor = System.Drawing.Color.Yellow;
+            this.pictureBoxDisplay.BackColor = System.Drawing.Color.DarkGray;
             this.pictureBoxDisplay.Location = new System.Drawing.Point(1, 0);
             this.pictureBoxDisplay.Name = "pictureBoxDisplay";
             this.pictureBoxDisplay.Size = new System.Drawing.Size(1232, 614);
@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(1235, 615);
             this.Controls.Add(this.pictureBoxDisplay);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisplay)).EndInit();
             this.ResumeLayout(false);
