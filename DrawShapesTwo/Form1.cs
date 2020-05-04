@@ -26,6 +26,9 @@ namespace DrawShapesTwo
             Pen bluePen = new Pen(Color.Blue, 2);
             Pen rainbowPen = new Pen(colorDialog1.Color); //default color is black
             SolidBrush br = new SolidBrush(Color.Orange);
+            br.Color = Color.FromArgb(123, 255, 126);
+
+            int size = 50;
 
             //IF the button pressed is the left button THEN
             //Draw the line 
@@ -35,10 +38,21 @@ namespace DrawShapesTwo
                 //canvas.DrawLine(bluePen, 0, 0, e.X, e.Y);
                 //canvas.DrawLine(rainbowPen, pictureBoxDisplay.Width / 2, pictureBoxDisplay.Height / 2, e.X, e.Y);
                 //canvas.DrawLine(rainbowPen, rand.Next(pictureBoxDisplay.Width + 1), rand.Next(pictureBoxDisplay.Height + 1), e.X, e.Y);
-                canvas.FillEllipse(br, e.X, e.Y, 50, 50);
-                canvas.DrawEllipse(rainbowPen, e.X, e.Y, 50, 50);
+                canvas.FillEllipse(br, e.X, e.Y, size, size);
+                canvas.DrawEllipse(rainbowPen, e.X, e.Y, size, size);
             }
 
+            //IF left mouse button is pressed THEN
+                //    Generate a random number of circles to draw
+                //    Set counter variable to 1
+                        //    WHILE counter <= number of circles to draw
+                            //    Generate a random number between 2 and 10 for the size of the circle
+                            //    Store xPos = mouse X + random number between - 10 and 10
+                            //    Store yPos = mouse Y + random number between - 10 and 10
+                            //    Draw ellipse at xPos and yPos position
+                            //    Add 1 to counter variable
+                        //    ENDWHILE
+            //    ENDIF
 
         }
 
