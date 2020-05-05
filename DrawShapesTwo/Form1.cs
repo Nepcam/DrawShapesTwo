@@ -13,6 +13,7 @@ namespace DrawShapesTwo
     public partial class Form1 : Form
     {
         Random rand = new Random();
+        
 
         public Form1()
         {
@@ -27,6 +28,7 @@ namespace DrawShapesTwo
             Pen rainbowPen = new Pen(colorDialog1.Color); //default color is black
             SolidBrush br = new SolidBrush(Color.Orange);
             br.Color = Color.FromArgb(123, 255, 126);
+            int randomNum = rand.Next(-10, 10);
 
             int size = 50;
 
@@ -40,20 +42,27 @@ namespace DrawShapesTwo
                 //canvas.DrawLine(rainbowPen, rand.Next(pictureBoxDisplay.Width + 1), rand.Next(pictureBoxDisplay.Height + 1), e.X, e.Y);
                 canvas.FillEllipse(br, e.X, e.Y, size, size);
                 canvas.DrawEllipse(rainbowPen, e.X, e.Y, size, size);
-            }
 
-            //IF left mouse button is pressed THEN
-                //    Generate a random number of circles to draw
+                //    Generate a random number of circles to draw between 4 and 10
+                int num = 7;
                 //    Set counter variable to 1
-                        //    WHILE counter <= number of circles to draw
-                            //    Generate a random number between 2 and 10 for the size of the circle
-                            //    Store xPos = mouse X + random number between - 10 and 10
-                            //    Store yPos = mouse Y + random number between - 10 and 10
-                            //    Draw ellipse at xPos and yPos position
-                            //    Add 1 to counter variable
-                        //    ENDWHILE
-            //    ENDIF
-
+                int counter = 1;
+                //    WHILE counter <= number of circles to draw
+                while (counter <= num)
+                {
+                    //Random rand = new Random();
+                    //    Generate a random number between 2 and 10 for the size of the circle
+                    int circleSize = 9;
+                    //    Store xPos = mouse X + random number between - 10 and 10
+                    int xPos = e.X + randomNum;
+                    //    Store yPos = mouse Y + random number between - 10 and 10
+                    int yPos = e.Y + randomNum;
+                    //    Draw ellipse at xPos and yPos position
+                    canvas.DrawEllipse(rainbowPen, xPos, yPos, circleSize, circleSize);
+                    //    Add 1 to counter variable
+                    counter++;
+                }   //    ENDWHILE
+            }
         }
 
         private void buttonSetColor_Click(object sender, EventArgs e)
