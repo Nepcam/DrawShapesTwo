@@ -32,7 +32,7 @@ namespace DrawShapesTwo
             if (e.Button == MouseButtons.Left)
             {
                 //FILL shape with color
-                SolidBrush br = new SolidBrush(Color.Orange);
+                SolidBrush br = new SolidBrush(Color.LightGray);
                 //DRAW the line
                 //paper.DrawLine(rainbowPen, rand.Next(pictureBoxDisplay.Width +1), pictureBoxDisplay.Height +1, e.X, e.Y);
                 //DRAW circle
